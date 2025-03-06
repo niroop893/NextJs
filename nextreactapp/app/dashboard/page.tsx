@@ -1,7 +1,15 @@
-function BarChart(){
-    return <h1>Bar Chart</h1>
-}
+"use client";
 
-export default function Dashboard(){
-    return <h1>Dashboard</h1>
+import { useState } from "react";
+
+export default function DashboardPage() {
+  const [name, setName] = useState("");
+
+  return (
+    <div>
+      <h1>Dashboard page</h1>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <p>Hello, {name}!</p>
+    </div>
+  );
 }

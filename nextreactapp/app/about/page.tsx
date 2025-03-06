@@ -1,7 +1,15 @@
-export const metadata = {
-  title: "About Zoombies"
-}
+import { cookies } from "next/headers";
+import { serverSideFunction } from "../../utils/server-utils";
 
-export default function About() {
-  return <h1>About Page</h1>
+export default async function AboutPage() {
+  const cookieStore = cookies();
+  const theme = (await cookieStore).get("theme");
+  console.log(theme);
+  const result = serverSideFunction();
+  return (
+    <>
+      <h1>About page {new Date().toLocaleTimeString()}</h1>
+      <p>{result}</p>
+    </>
+  );
 }
