@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ServerComponentOne } from "./server-component-one";
+import { ServerComponentOne } from "../components/server-component-one";
 
 export const ClientComponentOne = ({
   children,
